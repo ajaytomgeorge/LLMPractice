@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,7 +18,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install fastapi uvicorn transformers torch pytest
+        pip install fastapi uvicorn transformers torch pytest httpx
     - name: Test with pytest
       run: |
         pytest
